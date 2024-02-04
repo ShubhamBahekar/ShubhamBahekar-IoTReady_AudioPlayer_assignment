@@ -1,0 +1,20 @@
+.playerPage {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.player {
+  box-sizing: border-box;
+  border: 2px solid white;
+  text-align: center;
+  padding: 5px;
+  background-color: bisque;
+}
+audio::-webkit-media-controls-play-button {
+  display: none;
+}
