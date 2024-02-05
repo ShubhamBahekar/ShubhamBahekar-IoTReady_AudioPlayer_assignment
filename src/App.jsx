@@ -20,11 +20,17 @@ function App() {
   const [nextSongIndex, setNextSongIndex] = useState(0);
 
   useEffect(() => {
+    const storedPlayList = JSON.parse(localStorage.getItem("playList"));
+    console.log(storedPlayList);
+    storedPlayList && setPlayList(storedPlayList);
+  }, []);
+
+  useEffect(() => {
     setNextSongIndex(() => {
       if (currentSongIndex + 1 > playList.length - 1) return 0;
       else return currentSongIndex + 1;
     });
-    localStorage;
+    localStorage.setItem("playList", JSON.stringify(playList));
   }, [currentSongIndex, playList.length]);
 
   return (

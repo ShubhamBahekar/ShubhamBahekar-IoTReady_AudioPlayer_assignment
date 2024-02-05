@@ -74,12 +74,12 @@ function Player(props) {
           skipSong={skipSong}
         />
         <audio
-          src={props.playList[props.currentSongIndex].url}
+          src={props.playList[props.currentSongIndex]?.url}
           ref={audioState}
           className=""
           controls
         />
-        <p>Next Song: {props.playList[props.nextSongIndex].name}</p>
+        <p>Next Song: {props.playList[props.nextSongIndex]?.name}</p>
       </div>
     </div>
   );
