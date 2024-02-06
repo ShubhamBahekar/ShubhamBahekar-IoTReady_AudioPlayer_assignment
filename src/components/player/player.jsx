@@ -65,8 +65,14 @@ function Player(props) {
   return (
     <div className="playerPage">
       <div className="player">
-        <input type="file" accept="audio/*" onChange={handleData} multiple />
-        <h4>Playing Now</h4>
+        <input
+          type="file"
+          accept="audio/*"
+          onChange={handleData}
+          multiple
+          id="uploadButton"
+        />
+        {isPlaying ? <h4>Playing Now</h4> : <h4>Paused Now</h4>}
         <Player_Details song={props.playList[props.currentSongIndex]} />
         <Controller
           isPlaying={isPlaying}
@@ -79,7 +85,9 @@ function Player(props) {
           className=""
           controls
         />
-        <p>Next Song: {props.playList[props.nextSongIndex]?.name}</p>
+        <p id="next-song">
+          Next Song: {props.playList[props.nextSongIndex]?.name}
+        </p>
       </div>
     </div>
   );

@@ -13,8 +13,18 @@
   border: 2px solid white;
   text-align: center;
   padding: 5px;
-  background-color: bisque;
+  background-color: rgb(126, 72, 6);
+  border-radius: 5%;
 }
+
+#uploadButton {
+}
+
+#next-song {
+  color: rgb(141, 210, 50);
+  font-weight: 800;
+}
+
 audio::-webkit-media-controls-play-button {
   display: none;
 }
