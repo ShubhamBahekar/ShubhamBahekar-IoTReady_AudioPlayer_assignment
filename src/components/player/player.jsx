@@ -62,9 +62,17 @@ function Player(props) {
     console.log("playList=>", props.playList);
   }
 
+  function handleListItemClick(index) {
+    props.setCurrentSongIndex(index);
+    setIsPlaying(true);
+  }
+
   return (
     <div className="playerPage">
       <div className="player">
+        <label htmlFor="uploadButton" id="uploadButtonLabel">
+          Upload Music
+        </label>
         <input
           type="file"
           accept="audio/*"
@@ -88,6 +96,21 @@ function Player(props) {
         <p id="next-song">
           Next Song: {props.playList[props.nextSongIndex]?.name}
         </p>
+        <div className="playlist">
+          <ol className="list">
+            {props.playList.map((song, index) => {
+              return (
+                <li
+                  key={index}
+                  className="list-item"
+                  onClick={() => handleListItemClick(index)}
+                >
+                  {song.name}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
       </div>
     </div>
   );
@@ -99,7 +122,6 @@ Player.propTypes = {
   currentSongIndex: PropTypes.number.isRequired,
   setCurrentSongIndex: PropTypes.func.isRequired,
   nextSongIndex: PropTypes.number.isRequired,
-  // Add other prop types as needed
 };
 
 export default Player;

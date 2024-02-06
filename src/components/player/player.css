@@ -3,28 +3,61 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
 .player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   border: 2px solid white;
   text-align: center;
   padding: 5px;
-  background-color: rgb(126, 72, 6);
+  background-color: rgb(97, 103, 138);
   border-radius: 5%;
-}
-
-#uploadButton {
+  width: 35rem;
+  height: 35rem;
 }
 
 #next-song {
-  color: rgb(141, 210, 50);
+  color: rgb(240, 158, 65);
   font-weight: 800;
 }
 
+#uploadButtonLabel {
+  background-color: #cb3998;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+#uploadButton {
+  display: none;
+}
+
+.playlist {
+  overflow-y: scroll;
+}
+
+.list-item {
+  background-color: rgb(135, 168, 70);
+  color: black;
+  padding: 10px;
+  border: 0.2rem solid white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 audio::-webkit-media-controls-play-button {
+  display: none;
+}
+
+::-webkit-scrollbar {
   display: none;
 }
